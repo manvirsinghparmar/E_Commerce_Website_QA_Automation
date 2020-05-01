@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <listeners>
+    <listener class-name="com.e_commerce.qa.ExtentReportListener.ExtentReporterNg"/>
+  </listeners>
+  <test name="Test(failed)">
+    <classes>
+      <class name="E_Commerece.onLineShoppingProject.SignUpTest">
+        <methods>
+          <include name="fillFormTest"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="logSetUp"/>
+        </methods>
+      </class> <!-- E_Commerece.onLineShoppingProject.SignUpTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

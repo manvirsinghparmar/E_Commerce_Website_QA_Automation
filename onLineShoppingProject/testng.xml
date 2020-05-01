@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+
+
+<listeners>
+  <listener class-name="com.e_commerce.qa.ExtentReportListener.ExtentReporterNg" />
+ </listeners>
+	<test thread-count="5" name="Test">
+		<classes>
+			<class name="E_Commerece.onLineShoppingProject.SignUpTest" />
+			<class name="E_Commerece.onLineShoppingProject.SignInTest" />
+			<class name="E_Commerece.onLineShoppingProject.HomePageTest" />
+			<class name="E_Commerece.onLineShoppingProject.ContactUsTest" />
+			<class name="E_Commerece.onLineShoppingProject.AddToCartTest" />
+			<class name="E_Commerece.onLineShoppingProject.CheckOutTest" />
+
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
