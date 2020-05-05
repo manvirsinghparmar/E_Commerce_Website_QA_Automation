@@ -65,7 +65,7 @@ public class SignUp extends TestBase {
 	@FindBy(xpath = "//span[contains(text(),'Register')]")
 	WebElement registerButton;
 
-	public void SignUpEmail(String emailForSignUp) throws InterruptedException {
+	public void SignUpEmail(String emailForSignUp)  {
 
 		signUpEmail.sendKeys(emailForSignUp);
 

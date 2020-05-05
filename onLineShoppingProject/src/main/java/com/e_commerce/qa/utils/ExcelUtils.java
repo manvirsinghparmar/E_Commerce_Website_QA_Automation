@@ -5,13 +5,18 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import org.apache.commons.compress.archivers.zip.ZipArchiveInputStream;
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-public class ExcelUtils {
+import com.e_commerce.qa.base.TestBase;
+import com.jcraft.jsch.Logger;
+
+public class ExcelUtils extends TestBase {
 
 	public static FileInputStream fi;
 	public static FileOutputStream fo;
@@ -21,7 +26,7 @@ public class ExcelUtils {
 	public static XSSFRow row;
 	public static XSSFCell cell;
 
-	public static int getRowCount(String xFile, String xSheet) throws IOException {
+	public static int getRowCount(String xFile, String xSheet) throws Exception {
 
 		int rowCount;
 
@@ -67,6 +72,7 @@ public class ExcelUtils {
 
 	}
 
+	@SuppressWarnings("deprecation")
 	public static String getCellData(String xFile, String xSheet, int rowno, int colno) throws IOException {
 
 		String data;
@@ -80,6 +86,14 @@ public class ExcelUtils {
 		row = ws.getRow(rowno);
 		cell = row.getCell(colno);
 
+		/*
+		 * DataFormatter df = new DataFormatter(); 
+		 * String value=
+		 * df.formatCellValue(cell);
+		 */
+
+		cell.setCellType(cell.CELL_TYPE_STRING);
+
 		data = cell.getStringCellValue();
 
 		return data;
@@ -88,7 +102,7 @@ public class ExcelUtils {
 
 	public static void setCellData(String xlfile, String xlsheet, int rownum, int colnum, String data)
 			throws IOException {
-		
+
 		System.out.println("Inside Write Cell");
 
 		fi = new FileInputStream(xlfile);
