@@ -3,9 +3,14 @@
 <suite name="Suite">
 
 
-<listeners>
-  <listener class-name="com.e_commerce.qa.ExtentReportListener.ExtentReporterNg" />
- </listeners>
+	<listeners>
+		<listener
+			class-name="com.e_commerce.qa.ExtentReportListener.ExtentReporterNg" />
+
+		<listener
+			class-name="com.e_commerce.qa.customListener.CustomListener"/>
+
+	</listeners>
 	<test thread-count="5" name="Test">
 		<classes>
 			<class name="E_Commerece.onLineShoppingProject.SignUpTest" />
