@@ -1,16 +1,12 @@
 package com.e_commerce.qa.pages;
 
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.sikuli.script.Screen;
-import org.sikuli.script.FindFailed;
-import org.sikuli.script.Pattern;
 
 import com.e_commerce.qa.base.TestBase;
 
@@ -22,6 +18,7 @@ public class ContactUs extends TestBase {
 	}
 
 	@FindBy(xpath = "//a[@title='Contact Us']")
+	@CacheLookup
 	WebElement contactUsButton;
 
 	@FindBy(id = "id_contact")
@@ -34,6 +31,7 @@ public class ContactUs extends TestBase {
 	WebElement productInfo;
 
 	@FindBy(xpath = "//span[contains(text(),'Send')]")
+	@CacheLookup
 	WebElement sendButton;
 
 	@FindBy(id = "message")

@@ -2,6 +2,11 @@ package E_Commerece.onLineShoppingProject;
 
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -24,7 +29,7 @@ public class HomePageTest extends TestBase {
 
 	@BeforeMethod
 	void setup() {
-		
+
 		logger.info("..........Home Page Test Execution Started..........");
 
 		intialisation();
@@ -43,7 +48,7 @@ public class HomePageTest extends TestBase {
 
 	@Test(priority = 1)
 	public void verifyUserNameTest() {
-		
+
 		logger.info("..........Home Page -First Test ..........");
 
 		Assert.assertTrue(homepage.verifyUserName());
@@ -51,7 +56,7 @@ public class HomePageTest extends TestBase {
 
 	@Test(priority = 2)
 	public void verifyHomeIconTest() {
-		
+
 		logger.info("..........Home Page - Second Test ..........");
 
 		Assert.assertTrue(homepage.verifyHomeIcon(), "Home Page Icon Not Found");
@@ -59,20 +64,27 @@ public class HomePageTest extends TestBase {
 
 	@Test(priority = 3)
 	public void shoppingCartItemsTest() throws InterruptedException {
-		
+
 		logger.info("..........Home Page - Third Test ..........");
 
 		homepage.shoppingCartItems();
+		
+		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
+		
+		WebElement cartTitle=driver.findElement(By.xpath("//h1[@id='cart_title']"));
+		
+		String titleOfCart=cartTitle.getText();
+		
+		Assert.assertEquals(titleOfCart, "SHOPPING-CART SUMMARY");
 
 	}
-	
-	
+
 	@AfterMethod
 	void tearDown() throws InterruptedException {
 		Thread.sleep(2000);
 
 		driver.quit();
-		
+
 		logger.info("..........Home Page Test Execution Finished..........");
 	}
 

@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -21,9 +22,11 @@ public class HomePage extends TestBase {
 	WebElement userName;
 
 	@FindBy(xpath = "//i[@class='icon-home']")
-	WebElement homeIcon;
+	@CacheLookup
+	public WebElement homeIcon;
 
 	@FindBy(xpath = "//a[@title='View my shopping cart']")
+	@CacheLookup
 	WebElement viewShoppingCart;
 
 	public boolean verifyUserName() {

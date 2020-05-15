@@ -1,6 +1,7 @@
 package com.e_commerce.qa.pages;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -17,18 +18,23 @@ public class SignIn extends TestBase {
 	}
 
 	@FindBy(xpath = "//a[@title='Log in to your customer account']")
+	@CacheLookup
 	WebElement signInButton;
 
 	@FindBy(xpath = "//img[@class='logo img-responsive']")
+	@CacheLookup
 	WebElement storeLogo;
 
 	@FindBy(xpath = "//input[@id='email']")
+	@CacheLookup
 	WebElement userName;
 
 	@FindBy(name = "passwd")
+	@CacheLookup
 	WebElement password;
 
 	@FindBy(xpath = "//p[@class='submit']//span[1]")
+	@CacheLookup
 	WebElement submitButton;
 
 	public String loginPageTitle() {

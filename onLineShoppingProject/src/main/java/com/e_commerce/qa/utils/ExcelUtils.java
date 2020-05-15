@@ -14,7 +14,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import com.e_commerce.qa.base.TestBase;
-import com.jcraft.jsch.Logger;
+
 
 public class ExcelUtils extends TestBase {
 
@@ -86,17 +86,19 @@ public class ExcelUtils extends TestBase {
 		row = ws.getRow(rowno);
 		cell = row.getCell(colno);
 
-		/*
-		 * DataFormatter df = new DataFormatter(); 
-		 * String value=
-		 * df.formatCellValue(cell);
-		 */
+		
+		  /*DataFormatter df = new DataFormatter(); 
+		  String value=
+		  df.formatCellValue(cell);*/
+		
+		
+		 
 
 		cell.setCellType(cell.CELL_TYPE_STRING);
 
 		data = cell.getStringCellValue();
 
-		return data;
+		return data ;
 
 	}
 

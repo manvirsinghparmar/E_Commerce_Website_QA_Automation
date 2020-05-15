@@ -2,6 +2,7 @@ package com.e_commerce.qa.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -15,9 +16,11 @@ public class CheckOut extends TestBase {
 	}
 
 	@FindBy(xpath = "//a[@title='View my shopping cart']")
+	@CacheLookup
 	WebElement checkCart;
 
 	@FindBy(xpath = "//span[contains(text(),'Check out')]")
+	@CacheLookup
 	WebElement checkOutButton;
 
 	@FindBy(xpath = "//td[@class='cart_description']//a[contains(text(),'Printed Dress')]")
@@ -30,24 +33,30 @@ public class CheckOut extends TestBase {
 	WebElement contactNumber;
 
 	@FindBy(xpath = "//a[@class='button btn btn-default standard-checkout button-medium']//span[contains(text(),'Proceed to checkout')]")
+	@CacheLookup
 	WebElement proceedToCheckout;
 
 	@FindBy(xpath = "//button[@name='processAddress']//span[contains(text(),'Proceed to checkout')]")
+	@CacheLookup
 	WebElement proceedToCheckoutAddress;
 
 	@FindBy(xpath = "//button[@name='processCarrier']//span[contains(text(),'Proceed to checkout')]")
+	@CacheLookup
 	WebElement proceedToCheckoutCarrier;
 
 	@FindBy(name = "message")
 	public WebElement messageTextArea;
 
 	@FindBy(xpath = "//input[@name='cgv']")
+	@CacheLookup
 	WebElement checkBoxTermCondition;
 
 	@FindBy(xpath = "//a[@title='Pay by bank wire']")
+	@CacheLookup
 	WebElement payByBankWireButton;
 
 	@FindBy(xpath = "//a[@title='Pay by check.']")
+	@CacheLookup
 	WebElement payByCheck;
 
 	@FindBy(xpath = "//h3[@class='page-subheading']")

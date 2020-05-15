@@ -1,6 +1,7 @@
 package com.e_commerce.qa.pages;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -15,33 +16,43 @@ public class SignUp extends TestBase {
 	}
 
 	@FindBy(id = "email_create")
+	@CacheLookup
 	WebElement signUpEmail;
 
 	@FindBy(xpath = "//form[@id='create-account_form']//span[1]")
+	@CacheLookup
 	WebElement createAnAccount;
 
 	@FindBy(id = "id_gender1")
+	@CacheLookup
 	WebElement mister;
 
 	@FindBy(id = "id_gender2")
+	@CacheLookup
 	WebElement mrs;
 
 	@FindBy(name = "customer_firstname")
+	@CacheLookup
 	WebElement customerFirstName;
 
 	@FindBy(name = "customer_lastname")
+	@CacheLookup
 	WebElement customerLastName;
 
 	@FindBy(id = "passwd")
+	@CacheLookup
 	WebElement password;
 
 	@FindBy(name = "firstname")
+	@CacheLookup
 	WebElement addressFirstName;
 
 	@FindBy(name = "lastname")
+	@CacheLookup
 	WebElement addressLastName;
 
 	@FindBy(id = "address1")
+	@CacheLookup
 	WebElement addressFirstLine;
 
 	@FindBy(id = "city")
@@ -57,13 +68,18 @@ public class SignUp extends TestBase {
 	WebElement country;
 
 	@FindBy(id = "phone_mobile")
+	@CacheLookup
 	WebElement phoneMobile;
 
 	@FindBy(id = "alias")
+	@CacheLookup
 	WebElement commonName;
 
 	@FindBy(xpath = "//span[contains(text(),'Register')]")
 	WebElement registerButton;
+	
+	@FindBy(xpath="//div[@id='create_account_error']")
+	WebElement create_account_error;
 
 	public void SignUpEmail(String emailForSignUp)  {
 

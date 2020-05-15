@@ -4,16 +4,10 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import com.e_commerce.qa.base.TestBase;
 import com.e_commerce.qa.pages.SignIn;
 
 public class SignInTest extends TestBase {
-
-	public SignInTest() {
-		super();
-
-	}
 
 	SignIn signin;
 
@@ -28,7 +22,7 @@ public class SignInTest extends TestBase {
 
 	}
 
-	@Test(priority = 1)
+	@Test(priority = 1, invocationCount = 5, threadPoolSize = 2)
 	public void loginPageTitleTest() {
 		logger.info("..........Sign In - First Test..........");
 
@@ -65,15 +59,15 @@ public class SignInTest extends TestBase {
 
 		signin.Submit(prop.getProperty("username"), prop.getProperty("password"));
 	}
+	
+	
+	
 
 	@AfterMethod
 	void tearDown() throws InterruptedException {
 
-		
-		Thread.sleep(1000);
-
 		driver.quit();
-		
+
 		logger.info("..........Sign In Test Execution Finished..........");
 	}
 

@@ -1,14 +1,21 @@
 package com.e_commerce.qa.base;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
+import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeClass;
@@ -19,7 +26,7 @@ public class TestBase {
 
 	public static WebDriver driver;
 	public static Properties prop;
-	public static Logger logger;
+	public Logger logger;
 
 	public TestBase() {
 
@@ -45,9 +52,38 @@ public class TestBase {
 	@BeforeClass
 	public void logSetUp() {
 
-		logger = Logger.getLogger(TestBase.class);
-		PropertyConfigurator.configure("log4j.properties");
+		logger = Logger.getLogger("TestBase");
+		PropertyConfigurator.configure(
+				"C:\\Users\\Owner\\git\\E_commerce_automation_selenium\\onLineShoppingProject\\src\\main\\resources\\log4j.properties");
+		BasicConfigurator.configure();
+
 		logger.setLevel(Level.DEBUG);
+
+		logger.info("Inside Log Set Up");
+
+	}
+
+	public void failedTestScreenShot(String testMethodName) {
+		
+		
+
+		System.out.println("Failed Test ........Taking Screen Shot........");
+		
+		String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());// time stamp
+
+		File screenShotFfile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+
+		try {
+			FileUtils.copyFile(screenShotFfile, new File(
+					"C:\\Users\\Owner\\git\\E_commerce_automation_selenium\\onLineShoppingProject\\screenShotsOfFailedTests\\"
+							+ "_" + testMethodName+ "_" + timeStamp + ".jpg"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+
+			System.out.println("................................The IO Exception is ...... " + e);
+			e.printStackTrace();
+		}
+
 	}
 
 	public static void intialisation() {

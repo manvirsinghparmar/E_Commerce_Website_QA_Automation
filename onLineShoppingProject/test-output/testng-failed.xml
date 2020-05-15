@@ -3,14 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="E_Commerece.onLineShoppingProject.ContactUsTest">
+      <class name="E_Commerece.onLineShoppingProject.SignUpTest">
         <methods>
           <include name="tearDown"/>
-          <include name="setUp"/>
+          <include name="setup"/>
+          <include name="validateSignUpFormTest"/>
           <include name="logSetUp"/>
-          <include name="upLoadFile"/>
         </methods>
-      </class> <!-- E_Commerece.onLineShoppingProject.ContactUsTest -->
+      </class> <!-- E_Commerece.onLineShoppingProject.SignUpTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

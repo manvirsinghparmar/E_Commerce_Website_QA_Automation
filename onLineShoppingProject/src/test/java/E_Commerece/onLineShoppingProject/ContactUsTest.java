@@ -3,7 +3,7 @@ package E_Commerece.onLineShoppingProject;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.sikuli.script.FindFailed;
+
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -38,8 +38,7 @@ public class ContactUsTest extends TestBase {
 
 	}
 
-	
-	//@Test(priority = 1)
+	 @Test(priority = 1)
 	public void fillContactForm() {
 
 		logger.info("..........Contact us - First Test ..........");
@@ -55,8 +54,6 @@ public class ContactUsTest extends TestBase {
 		Assert.assertTrue(contactus.sucessMessage());
 
 	}
-
-	
 
 	@AfterMethod
 	void tearDown() {

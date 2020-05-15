@@ -2,9 +2,9 @@ package com.e_commerce.qa.pages;
 
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -32,15 +32,18 @@ public class AddToCart extends TestBase {
 	WebElement addToCartButton;
 
 	@FindBy(xpath = "//a[@id='wishlist_button']")
+	@CacheLookup
 	WebElement wishListButton;
 
 	@FindBy(xpath = "//a[@class='fancybox-item fancybox-close']")
 	WebElement dismissWishListPopUp;
 
 	@FindBy(xpath = "//i[@class='icon-plus']")
+	@CacheLookup
 	WebElement plusIcon;
 
 	@FindBy(xpath = "//div[@id='page']//span[@class='cross']")
+	@CacheLookup
 	WebElement crossIcon;
 
 	WebDriverWait wait2 = new WebDriverWait(driver, 20);
@@ -81,16 +84,14 @@ public class AddToCart extends TestBase {
 	public void addItemsToCart() {
 
 		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
-		
+
 		addToCartButton.click();
 
 		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
-		
+
 		driver.switchTo().parentFrame();
 
 		crossIcon.click();
-		
-		
 
 	}
 

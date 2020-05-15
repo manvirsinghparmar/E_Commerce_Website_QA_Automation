@@ -3,17 +3,26 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
   <listeners>
     <listener class-name="com.e_commerce.qa.ExtentReportListener.ExtentReporterNg"/>
+    <listener class-name="com.e_commerce.qa.customListener.CustomListener"/>
   </listeners>
   <test name="Test(failed)">
     <classes>
-      <class name="E_Commerece.onLineShoppingProject.SignUpTest">
+      <class name="E_Commerece.onLineShoppingProject.CheckOutTest">
         <methods>
-          <include name="fillFormTest"/>
           <include name="tearDown"/>
           <include name="setup"/>
           <include name="logSetUp"/>
+          <include name="readContactnoTest"/>
         </methods>
-      </class> <!-- E_Commerece.onLineShoppingProject.SignUpTest -->
+      </class> <!-- E_Commerece.onLineShoppingProject.CheckOutTest -->
+      <class name="E_Commerece.onLineShoppingProject.SignInTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="logSetUp"/>
+          <include name="loginPageTitleTest"/>
+        </methods>
+      </class> <!-- E_Commerece.onLineShoppingProject.SignInTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
