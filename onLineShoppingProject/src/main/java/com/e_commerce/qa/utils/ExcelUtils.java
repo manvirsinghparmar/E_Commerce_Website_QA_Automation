@@ -1,20 +1,15 @@
 package com.e_commerce.qa.utils;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-import org.apache.commons.compress.archivers.zip.ZipArchiveInputStream;
-import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.XSSFCell;
-
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import com.e_commerce.qa.base.TestBase;
-
 
 public class ExcelUtils extends TestBase {
 
@@ -86,19 +81,16 @@ public class ExcelUtils extends TestBase {
 		row = ws.getRow(rowno);
 		cell = row.getCell(colno);
 
-		
-		  /*DataFormatter df = new DataFormatter(); 
-		  String value=
-		  df.formatCellValue(cell);*/
-		
-		
-		 
+		/*
+		 * DataFormatter df = new DataFormatter(); String value=
+		 * df.formatCellValue(cell);
+		 */
 
 		cell.setCellType(cell.CELL_TYPE_STRING);
 
 		data = cell.getStringCellValue();
 
-		return data ;
+		return data;
 
 	}
 

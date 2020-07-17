@@ -75,7 +75,7 @@ public class HomePageTest extends TestBase {
 		
 		String titleOfCart=cartTitle.getText();
 		
-		Assert.assertEquals(titleOfCart, "SHOPPING-CART SUMMARY");
+		Assert.assertEquals(titleOfCart, "SHOPPING-CART SUMMARY-Manvir");
 
 	}
 

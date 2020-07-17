@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test name="Default test(failed)">
+<suite thread-count="1" guice-stage="DEVELOPMENT" name="Failed suite [E_commerece Website QA Automation]" parallel="classes">
+  <listeners>
+    <listener class-name="com.e_commerce.qa.ExtentReportListener.ExtentReporterNg"/>
+    <listener class-name="com.e_commerce.qa.customListener.CustomListener"/>
+    <listener class-name="E_Commerece.onLineShoppingProject.MyTransformer"/>
+  </listeners>
+  <test name="Test(failed)" parallel="classes">
     <classes>
-      <class name="E_Commerece.onLineShoppingProject.SignUpTest">
+      <class name="E_Commerece.onLineShoppingProject.HomePageTest">
         <methods>
           <include name="tearDown"/>
-          <include name="setup"/>
-          <include name="validateSignUpFormTest"/>
           <include name="logSetUp"/>
+          <include name="shoppingCartItemsTest"/>
+          <include name="setup"/>
         </methods>
-      </class> <!-- E_Commerece.onLineShoppingProject.SignUpTest -->
+      </class> <!-- E_Commerece.onLineShoppingProject.HomePageTest -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [E_commerece Website QA Automation] -->

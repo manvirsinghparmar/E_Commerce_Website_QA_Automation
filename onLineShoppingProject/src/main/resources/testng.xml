@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="E_commerece Website QA Automation" parallel="classes" thread-count="1">
+<suite name="E_commerece Website QA Automation" parallel="classes"
+	thread-count="1">
 
 
 	<listeners>
@@ -9,6 +10,9 @@
 
 		<listener
 			class-name="com.e_commerce.qa.customListener.CustomListener" />
+
+		<listener
+			class-name="E_Commerece.onLineShoppingProject.MyTransformer" />
 
 	</listeners>
 	<test name="Test">

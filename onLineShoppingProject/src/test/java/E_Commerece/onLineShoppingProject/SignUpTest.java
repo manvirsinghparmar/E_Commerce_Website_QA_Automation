@@ -80,9 +80,9 @@ public class SignUpTest extends TestBase {
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 		signUp.registerButtonClick();
-		
+
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		
+
 		Assert.assertTrue(driver.findElement(By.xpath("//i[@class='icon-home']")).isDisplayed());
 
 	}

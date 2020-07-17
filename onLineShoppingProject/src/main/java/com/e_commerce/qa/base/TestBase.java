@@ -93,7 +93,7 @@ public class TestBase {
 		if (browsername.equals("chrome")) {
 
 			System.setProperty("webdriver.chrome.driver",
-					"C:\\Users\\Owner\\eclipse-workspace\\onLineShoppingProject\\drivers\\chromedriver.exe");
+					"C:\\Users\\Owner\\git\\E_commerce_automation_selenium\\onLineShoppingProject\\drivers\\chromedriver.exe");
 
 			driver = new ChromeDriver();
 
